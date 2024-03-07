@@ -9,12 +9,16 @@ class GenreFilm {
     $this->nomGenre = $nomGenre;
   } 
  //////////GETTERS & SETTERS//////////////
-  public function getNomGenre()
+  public function getNomGenre() : string
   {
     return $this->nomGenre;
   }
   public function setNomGenre($nomGenre)
   {
     $this->nomGenre = $nomGenre;
+  }
+
+  public function __toString() {
+    return $this->nomGenre;
   }
 }

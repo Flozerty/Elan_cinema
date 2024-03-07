@@ -11,7 +11,7 @@ public function __construct(
 
   //////////GETTERS & SETTERS//////////////
   
-  public function getNomRole()
+  public function getNomRole() : string 
   {
     return $this->nomRole;
   }
@@ -20,5 +20,7 @@ public function __construct(
     $this->nomRole = $nomRole;
   }
 
-  
+  public function __toString() {
+    return $this->nomRole;
+  }
 }

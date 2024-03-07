@@ -11,16 +11,16 @@ class Personne {
     string $nom,
     string $prenom,
     string $sexe,
-    DateTime $dateNaissance,
+    string $dateNaissance,
   ) {
     $this->nom = $nom;
     $this->prenom = $prenom;
     $this->sexe = $sexe;
-    $this->dateNaissance = $dateNaissance;
+    $this->dateNaissance = new \DateTime($dateNaissance);
   }
   //////////GETTERS & SETTERS//////////////
 
-  public function getDateNaissance()
+  public function getDateNaissance() : DateTime 
   {
     return $this->dateNaissance;
   }
@@ -28,15 +28,15 @@ class Personne {
   {
     $this->dateNaissance = $dateNaissance;
   }
-  public function getSexe()
+  public function getSexe() : string
   {
     return $this->sexe;
   }
-  public function setSexe($sexe)
+  public function setSexe($sexe) 
   {
     $this->sexe = $sexe;
   }
-  public function getPrenom()
+  public function getPrenom() : string
   {
     return $this->prenom;
   }
@@ -44,7 +44,7 @@ class Personne {
   {
     $this->prenom = $prenom;
   }
-  public function getNom()
+  public function getNom() : string
   {
     return $this->nom;
   } 
@@ -53,4 +53,7 @@ class Personne {
     $this->nom = $nom;
   }
   
+  public function __toString() {
+    return "$this->nom $this->prenom";
+  }
 }

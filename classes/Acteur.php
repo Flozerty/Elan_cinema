@@ -1,20 +1,20 @@
 <?php
 
 class Acteur extends Personne {
-  private $photo;
+  private string $photo;
 
   public function __construct(
     string $nom,
     string $prenom,
     string $sexe,
-    DateTime $dateNaissance,
-    $photo,
+    string $dateNaissance,
+    string $photo,
   ) {
     parent::__construct($nom, $prenom, $sexe, $dateNaissance);
     $this->photo = $photo;
   }
   //////////GETTERS & SETTERS//////////////
-  public function getPhoto()
+  public function getPhoto() : string 
   {
     return $this->photo;
   }
@@ -23,4 +23,7 @@ class Acteur extends Personne {
     $this->photo = $photo;
   }
   
+  public function __toString() {
+    return parent::__toString();
+  }
 }

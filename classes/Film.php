@@ -9,18 +9,18 @@ private string $synopsis;
 
 public function __construct(
   string $titre,
-  DateTime $dateSortie,
+  string $dateSortie,
   int $duree,
   string $synopsis,
   ) {
     $this->titre = $titre;
-    $this->dateSortie = $dateSortie;
+    $this->dateSortie = new \DateTime($dateSortie);
     $this->duree = $duree;
     $this->synopsis = $synopsis;
   }
   //////////GETTERS & SETTERS//////////////
 
-  public function getSynopsis()
+  public function getSynopsis() : string 
   {
   return $this->synopsis;
   }
@@ -29,7 +29,7 @@ public function __construct(
   $this->synopsis = $synopsis;
   }
   
-  public function getDuree()
+  public function getDuree() : int 
   {
   return $this->duree;
   }
@@ -38,7 +38,7 @@ public function __construct(
   $this->duree = $duree;
   }
 
-  public function getDateSortie()
+  public function getDateSortie()   : DateTime
   {
   return $this->dateSortie;
   }
@@ -46,7 +46,7 @@ public function __construct(
   {
   $this->dateSortie = $dateSortie;
   }
-  public function getTitre()
+  public function getTitre() : string
   {
   return $this->titre;
   }
@@ -55,4 +55,7 @@ public function __construct(
   $this->titre = $titre;
   }
   
+  public function __toString() {
+    return $this->titre;
+  }
 }
