@@ -2,6 +2,7 @@
 
 class Acteur extends Personne {
   private string $photo;
+  private array $castings;
 
   public function __construct(
     string $nom,
@@ -12,6 +13,7 @@ class Acteur extends Personne {
   ) {
     parent::__construct($nom, $prenom, $sexe, $dateNaissance);
     $this->photo = $photo;
+    $this->castings = [];
   }
   //////////GETTERS & SETTERS//////////////
   public function getPhoto() : string 
@@ -22,7 +24,15 @@ class Acteur extends Personne {
   {
     $this->photo = $photo;
   }
-  
+  public function getCastings() : array
+  {
+    return $this->castings;
+  }
+  public function setCastings($castings)
+  {
+    $this->castings = $castings;
+  }
+//////////////////////////////////////////////
   public function __toString() {
     return parent::__toString();
   }

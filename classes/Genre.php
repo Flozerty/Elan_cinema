@@ -1,12 +1,13 @@
 <?php
 
-class GenreFilm {
+class Genre {
   private string $nomGenre;
-
+  private array $films;
   public function __construct(
     string $nomGenre,
   ){
     $this->nomGenre = $nomGenre;
+    $this->films = [];
   } 
  //////////GETTERS & SETTERS//////////////
   public function getNomGenre() : string
@@ -17,7 +18,15 @@ class GenreFilm {
   {
     $this->nomGenre = $nomGenre;
   }
-
+  public function getFilms() : array
+  {
+    return $this->films;
+  }
+  public function setFilms($films)
+  {
+    $this->films = $films;
+  }
+////////////////////////////////////////
   public function __toString() {
     return $this->nomGenre;
   }
