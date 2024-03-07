@@ -1,0 +1,26 @@
+classe : c'est un ensemble d'états et de comportements, les états sont les propriétés et les comportements sont les méthodes qui me permettront de manipule le futur objet 
+
+objet : INSTANCE de classe 
+
+getters : récupère les valeurs des propriétés
+
+setters : changer la valeur des propriétés
+
+methode magique + exemples : Des fonctions / methodes exécutées dès qu'un certain évènement arrive.
+
+    ex : __toString : exécutée lorsqu'on tente de traiter un object comme une string (retrourne une string)
+
+    ex : __construct : exécutée dès la création d'une nouvelle instance.
+
+
+
+encapsulation : public / private / protected : attribué aux propriétés d'une classe pour savoir quelle est leur limite d'accès hors de la classe. Les Getters et Setters sont utilisés dans l'encapsulation pour pouvoir avoir un accès aux données private "point d'entrée/sortie"
+
+autoloader : spl_autoload_register
+
+heritage : propriétés récupérées d'une classe parent à une classe enfant.
+
+
+\ avant certains noms de classe : Classe native à PHP
+
+limite de caractères d'un string : ????????
