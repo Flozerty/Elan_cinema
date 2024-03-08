@@ -13,6 +13,7 @@ class Acteur extends Personne {
   ) {
     parent::__construct($nom, $prenom, $sexe, $dateNaissance);
     $this->photo = $photo;
+    
     $this->castings = [];
   }
   //////////GETTERS & SETTERS//////////////
@@ -35,5 +36,18 @@ class Acteur extends Personne {
 //////////////////////////////////////////////
   public function __toString() {
     return parent::__toString();
+  }
+
+  public function addCasting(Casting $casting) {
+    $this->castings[] = $casting;
+  }
+
+  // renvoie tous les films avec un rôle joué par l'acteur.
+  public function getAllFilms() : string {
+    $result = "$this a joué dans les rôles de :<ul>";
+    foreach ($this->castings as $casting) {
+      $result .= "<li>".$casting->castingforActeur()."</li>";
+    }
+    return "$result</ul>";
   }
 }

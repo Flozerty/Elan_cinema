@@ -25,7 +25,12 @@ class Film {
     $this->synopsis = $synopsis;
     $this->realisateur = $realisateur;
     $this->genre = $genre;
+
     $this->castings = [];
+
+    // Ajout du film dans le genre et le réalisateur associé
+    $this->genre->addFilm($this);
+    $this->realisateur->addFilm($this);
   }
   //////////GETTERS & SETTERS//////////////
 
@@ -91,5 +96,16 @@ class Film {
    public function __toString() {
     return $this->titre;
   }
+  public function addCasting(Casting $casting) {
+    $this->castings[] = $casting;
+  }
 
+  // renvoie tous les acteurs avec un rôle joué dans le film.
+  public function getAllActeurs() : string {
+    $result = "$this, réalisé par $this->realisateur, avec les acteurs suivants :<ul>";
+    foreach ($this->castings as $casting) {
+      $result .= "<li>".$casting->castingforFilm()."</li>";
+    }
+    return "$result</ul>";
+  }
 }

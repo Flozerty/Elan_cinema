@@ -33,5 +33,17 @@ public function __construct(
   public function __toString() {
     return $this->nomRole;
   }
-  
+
+  public function addCasting(Casting $casting) {
+    $this->castings[] = $casting;
+  }
+
+  // renvoie la liste des acteurs ayant joué ce rôle dans un film.
+  public function getActeurs() : string {
+    $result = "Le rôle de $this a été joué par :<ul>";
+    foreach ($this->castings as $casting) {
+      $result .= "<li>".$casting->getActeur()." dans ".$casting->getFilm()."</li>";
+    }
+    return "$result</ul>";
+  }
 }

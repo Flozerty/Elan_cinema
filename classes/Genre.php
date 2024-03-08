@@ -30,4 +30,8 @@ class Genre {
   public function __toString() {
     return $this->nomGenre;
   }
+
+  public function addFilm(Film $film) {
+    $this->films[] = $film;
+  }
 }

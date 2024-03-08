@@ -37,4 +37,8 @@ class Realisateur extends Personne {
     return parent::__toString();
   }
 
+  public function addFilm(Film $film) {
+    $this->films[] = $film;
+  }
+
 }

@@ -13,6 +13,12 @@ class Casting {
     $this->film = $film;
     $this->acteur = $acteur;
     $this->role = $role;
+
+    //Ajout du casting dans le tableau de castings de l'acteur, du film, et du role associés.
+
+    $this->film->addCasting($this);
+    $this->acteur->addCasting($this);
+    $this->role->addCasting($this);
   }
  //////////GETTERS & SETTERS//////////////
 
@@ -42,6 +48,17 @@ class Casting {
   }
 
   public function __toString() {
-    return "Castin de $this->film";
+    return "$this->acteur a joué $this->role dans $this->film";
+  }
+
+  // Réponses personnalisées quand on appelle le casting de l'acteur / films ou role
+  public function castingForActeur() :string {
+    return "$this->role dans $this->film";
+  }
+  public function castingForFilm() :string {
+    return "$this->acteur dans le rôle de $this->role";
+  }
+  public function castingForRole() :string {
+    return "$this->acteur dans $this->film";
   }
 }
