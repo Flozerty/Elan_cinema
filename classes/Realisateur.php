@@ -41,4 +41,12 @@ class Realisateur extends Personne {
     $this->films[] = $film;
   }
 
+//renvoie la liste des films réalisés par le réalisateur
+  public function filmographie() : string {
+    $result = "Liste des films réalisés par $this :<ul>";
+    foreach($this->films as $film) {
+      $result .= "<li>".$film->getTitre()."</li>";
+    };
+    return "$result</ul>";
+  }
 }

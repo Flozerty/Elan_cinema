@@ -93,7 +93,7 @@ $films = [
   $titanic = new Film("Titanic","1997", 195, "Southampton, 10 avril 1912. Le paquebot le plus grand et le plus moderne du monde, réputé pour son insubmersibilité, le 'Titanic', appareille pour son premier voyage. Quatre jours plus tard, il heurte un iceberg. A son bord, un artiste pauvre et une grande bourgeoise tombent amoureux.", $jCameron, $drame),
   $avatar = new Film("Avatar","2009", 162,"Malgré sa paralysie, Jake Sully, un ancien marine immobilisé dans un fauteuil roulant, est resté un combattant au plus profond de son être. Il est recruté pour se rendre à des années-lumière de la Terre, sur Pandora, où de puissants groupes industriels exploitent un minerai rarissime destiné à résoudre la crise énergétique sur Terre. Parce que l'atmosphère de Pandora est toxique pour les humains, ceux-ci ont créé le Programme Avatar, qui permet à des 'pilotes' humains de lier leur esprit à un avatar, un corps biologique commandé à distance, capable de survivre dans cette atmosphère létale. Ces avatars sont des hybrides créés génétiquement en croisant l'ADN humain avec celui des Na'vi, les autochtones de Pandora.", $jCameron, $scifi),
   $bumblebee = new Film('Bumblebee', "2018", 114, "Alors qu'il est en fuite, l'Autobot Bumblebee trouve refuge dans la décharge d'une petite ville balnéaire de Californie. Il est découvert, brisé et couvert de blessures de guerre, par Charlie, une ado qui approche de ses 18 ans et cherche sa place dans le monde.", $mBay, $action),
-  $ninjaturtles = new Film('Ninla Turtles', '2014', 101, "Tenez-vous prêts : quatre héros de légende vont bientôt faire parler d’eux à New York… Leonardo, le leader, Michelangelo, le beau gosse, Raphael, le rebelle et Donatello, le cerveau, vont tout faire pour défendre la ville de New York, prise entre les griffes de Shredder. Entre deux dégustations de pizzas (sans anchois, bien sûr) et un entraînement intense aux arts martiaux, prodigué par leur maître Splinter, ils vont accomplir leur destin, aidés par la courageuse reporter, April O’Neil.", $mBay, $action),
+  $ninjaturtles = new Film('Ninja Turtles', '2014', 101, "Tenez-vous prêts : quatre héros de légende vont bientôt faire parler d’eux à New York… Leonardo, le leader, Michelangelo, le beau gosse, Raphael, le rebelle et Donatello, le cerveau, vont tout faire pour défendre la ville de New York, prise entre les griffes de Shredder. Entre deux dégustations de pizzas (sans anchois, bien sûr) et un entraînement intense aux arts martiaux, prodigué par leur maître Splinter, ils vont accomplir leur destin, aidés par la courageuse reporter, April O’Neil.", $mBay, $action),
 ];
 
 $castings = [
@@ -124,6 +124,12 @@ $castings = [
 echo $kMacLachlan->getAllFilms();
 echo $elephantMan->getAllActeurs();
 echo $april->getActeurs();
+
+foreach($genres as $genre){
+  echo ($genre->getfilms()) ? $genre->getFilmsGenre() : "";
+}
+
+echo $mBay->filmographie();
 // var_dump($avatar->getcastings());
 // var_dump($action->getFilms());
 

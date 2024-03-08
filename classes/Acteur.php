@@ -42,7 +42,7 @@ class Acteur extends Personne {
     $this->castings[] = $casting;
   }
 
-  // renvoie tous les films avec un rôle joué par l'acteur.
+  // renvoie tous les rôles joué par l'acteur dans un film.
   public function getAllFilms() : string {
     $result = "$this a joué dans les rôles de :<ul>";
     foreach ($this->castings as $casting) {
@@ -50,4 +50,6 @@ class Acteur extends Personne {
     }
     return "$result</ul>";
   }
+
+
 }

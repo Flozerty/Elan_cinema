@@ -34,4 +34,13 @@ class Genre {
   public function addFilm(Film $film) {
     $this->films[] = $film;
   }
+
+  //retoure la liste des films du genre sélectionné
+  public function getFilmsGenre() : string {
+    $result = "<div><h2>La liste de nos films du Genre $this :</h2><ul>";
+    foreach($this->films as $film) {
+      $result .= "<li>$film de ".$film->getRealisateur()."</li>";
+    }
+    return "$result</ul></div>";
+  }
 }
