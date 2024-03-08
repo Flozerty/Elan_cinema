@@ -21,7 +21,7 @@ $genres = [
 
 $réalicateurs = [
   $dLynch = new Realisateur('Lynch','David','Homme','1946-01-20','biographie de Lynch'),
-  $sSpilberg = new Realisateur('Spielberg','Steven','Homme','1946-12-18','biographie de Spielberg'),
+  $sSpielberg = new Realisateur('Spielberg','Steven','Homme','1946-12-18','biographie de Spielberg'),
   $jCameron = new Realisateur('Cameron','James','Homme','1954-08-16','biographie de Cameron'),
   $pJackson = new Realisateur('Jackson','Peter','Homme','1961-10-31','biographie de Jackson'),
   $mBay = new Realisateur('Bay','Michael','Homme','1965-02-17','biographie de Bay'),
@@ -56,7 +56,7 @@ $acteurs = [
 ];
 
 $roles = [
-  $$april = new Role("April O'Neil"),
+  $april = new Role("April O'Neil"),
   $vern = new Role('Vern Fenwick'),
   $charlie = new Role('Charlie'),
   $memo = new Role('Memo'),
@@ -91,9 +91,9 @@ $films = [
 
   $lesDentsDeLaMer = new Film('Les Dents de la mer','1975', 124,"Les Dents de la mer est un thriller américain sorti en 1975 et réalisé par Steven Spielberg. Le film raconte l'histoire de la petite station balnéaire d'Amity, où les habitants sont mis en émoi par la découverte sur le littoral du corps atrocement mutilé d'une jeune vacancière. Pour Martin Brody, le chef de la police, il ne fait aucun doute que la jeune fille a été victime d'un requin", $sSpielberg, $action),
 
-  $et = new Film('E.T.','1982', 115, "E.T., l'extra-terrestre est un film de science-fiction américain réalisé par Steven Spielberg et sorti en 1982. Le film raconte l'histoire d'Elliott, un petit garçon solitaire qui se lie d'amitié avec un extraterrestre abandonné sur Terre. Avec son frère et sa sœur, Elliott va le recueillir puis l'aider à reprendre contact avec ses congénères, tout en essayant de le garder caché de leur mère et du gouvernement américain.", $sSpilberg, $scifi),
+  $et = new Film('E.T.','1982', 115, "E.T., l'extra-terrestre est un film de science-fiction américain réalisé par Steven Spielberg et sorti en 1982. Le film raconte l'histoire d'Elliott, un petit garçon solitaire qui se lie d'amitié avec un extraterrestre abandonné sur Terre. Avec son frère et sa sœur, Elliott va le recueillir puis l'aider à reprendre contact avec ses congénères, tout en essayant de le garder caché de leur mère et du gouvernement américain.", $sSpielberg, $scifi),
 
-  $jurassicPark = new Film("Jurassic Park","1993", 127, "Jurassic Park est un film de science-fiction qui raconte l'histoire de scientifiques qui ont réussi à cloner des animaux préhistoriques sur une île au large du Costa Rica. Le milliardaire John Hammond a financé leur découverte, qui a permis de créer un parc d'attractions peuplé de dinosaures. Les dinosaures ont été clonés à partir d'une goutte de sang absorbée par un moustique fossilisé", $sSpilberg, $action),
+  $jurassicPark = new Film("Jurassic Park","1993", 127, "Jurassic Park est un film de science-fiction qui raconte l'histoire de scientifiques qui ont réussi à cloner des animaux préhistoriques sur une île au large du Costa Rica. Le milliardaire John Hammond a financé leur découverte, qui a permis de créer un parc d'attractions peuplé de dinosaures. Les dinosaures ont été clonés à partir d'une goutte de sang absorbée par un moustique fossilisé", $sSpielberg, $action),
 
   $titanic = new Film("Titanic","1997", 195, "Southampton, 10 avril 1912. Le paquebot le plus grand et le plus moderne du monde, réputé pour son insubmersibilité, le 'Titanic', appareille pour son premier voyage. Quatre jours plus tard, il heurte un iceberg. A son bord, un artiste pauvre et une grande bourgeoise tombent amoureux.", $jCameron, $drame),
 
@@ -103,7 +103,36 @@ $films = [
 
   $ninjaturtles = new Film('Ninla Turtles', '2014', 101, "Tenez-vous prêts : quatre héros de légende vont bientôt faire parler d’eux à New York… Leonardo, le leader, Michelangelo, le beau gosse, Raphael, le rebelle et Donatello, le cerveau, vont tout faire pour défendre la ville de New York, prise entre les griffes de Shredder. Entre deux dégustations de pizzas (sans anchois, bien sûr) et un entraînement intense aux arts martiaux, prodigué par leur maître Splinter, ils vont accomplir leur destin, aidés par la courageuse reporter, April O’Neil.", $mBay, $action),
 ];
-// $films 
+
+$castings = [
+  new Casting($ninjaturtles, $mFox, $april),
+  new Casting($ninjaturtles, $wArnett, $vern),
+  new Casting($bumblebee, $hSteinfeld, $charlie),
+  new Casting($bumblebee, $jLendeborgjr, $memo),
+  new Casting($titanic, $lDiCaprio, $jack),
+  new Casting($titanic, $kWinslet, $rose),
+  new Casting($avatar, $sWorthington, $sully),
+  new Casting($avatar, $zSaldana, $neytiri),
+  new Casting($avatar, $sWeaver, $grace),
+  new Casting($et, $hThomas, $elliott),
+  new Casting($et, $dBarrymore, $gertie),
+  new Casting($jurassicPark, $sNeill, $grant),
+  new Casting($jurassicPark, $lDern, $ellie),
+  new Casting($elephantMan, $aHopkins, $frederick),
+  new Casting($elephantMan, $jHurt, $merrick),
+  new Casting($elephantMan, $aBrancroft, $kendal),
+  new Casting($lesDentsDeLaMer, $rScheider, $brody),
+  new Casting($lesDentsDeLaMer, $rShaw, $quint),
+  new Casting($lesDentsDeLaMer, $rDreyfuss, $hooper),
+  new Casting($dune, $kMacLachlan, $atreides),
+  new Casting($dune, $vMadsen, $irulan),
+  new Casting($dune, $fAnnis, $jessica),
+];
+
+
+var_dump(new Casting($dune, $fAnnis, $jessica));
+
+// $films :
 // Lynch : Dune, Elephant man, 
 // Spielberg : Les dents de la mer, ET, Jurrassic park(1993);
 // cameron : titanic, avatar
